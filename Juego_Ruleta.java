@@ -1,9 +1,7 @@
- package juego_ruleta;
+package juego_ruleta;
 
 //LIBRERIA PARA LEER DEL TECLADO
 import java.util.Scanner;
-
-
 
 public class Juego_Ruleta {
 
@@ -44,35 +42,40 @@ public class Juego_Ruleta {
                             System.out.print(" ENTRE 1 Y 10: ");
                             acertarNumero = teclado.nextInt();
 
-                            //NUMERO ALEATORIO ENTRE 1 Y 10 NO CERO
-                            random = (int) (Math.random() * 10 + 1);
-                            System.out.println("\nEL NUMERO ES: " + random);
+                            while (acertarNumero >= 1 && acertarNumero <= 10) {
 
-                            saldo -= 10; //le quita una apuesta al saldo inicial
+                                //NUMERO ALEATORIO ENTRE 1 Y 10 NO CERO
+                                random = (int) (Math.random() * 10 + 1);
+                                System.out.println("\nEL NUMERO ES: " + random);
 
-                            //VALIDA SI ACIERTA EL NUMERO
-                            if (acertarNumero == random) {
+                                saldo -= 10; //le quita una apuesta al saldo inicial
 
-                                //SI ACIERTA GANA EL TRIPLE DE LO QUE APUESTA
-                                ganan = apuesta * 3;
+                                //VALIDA SI ACIERTA EL NUMERO
+                                if (acertarNumero == random) {
 
-                                //CALCULA EL SALDO ACUTAL, LOQ UE GANA MAS LO QUE TENIA
-                                saldo += ganan;
+                                    //SI ACIERTA GANA EL TRIPLE DE LO QUE APUESTA
+                                    ganan = apuesta * 3;
 
-                                //MUESTRA EL SALDO QUE SUMA AL GANAR
-                                System.out.println("FELICIDADES, ACERTASTE EL NUMERO");
-                                System.out.println("\nTU SALDO ACTUAL ES: " + saldo);
-                                System.out.println("_________________________________");
+                                    //CALCULA EL SALDO ACUTAL, LOQ UE GANA MAS LO QUE TENIA
+                                    saldo += ganan;
 
-                            } else {
+                                    //MUESTRA EL SALDO QUE SUMA AL GANAR
+                                    System.out.println("FELICIDADES, ACERTASTE EL NUMERO");
+                                    System.out.println("\nTU SALDO ACTUAL ES: " + saldo);
+                                    System.out.println("_________________________________");
 
-                                System.out.println("\nHAS PERDIDO");
+                                } else {
 
-                                //MUESTRA EL SALDO QUE LE QUEDA DESPUES DE LA APUESTA
-                                System.out.println("TU SALDO ACTUAL ES: " + saldo);
-                                System.out.println("_________________________________");
+                                    System.out.println("\nHAS PERDIDO");
+
+                                    //MUESTRA EL SALDO QUE LE QUEDA DESPUES DE LA APUESTA
+                                    System.out.println("TU SALDO ACTUAL ES: " + saldo);
+                                    System.out.println("_________________________________");
+                                }
                             }
-
+                            System.out.println("______________________________________________________");
+                            System.out.println("\nEL NUMERO " + acertarNumero + "  NO ESTA EN EL RANGO");//FIN WHILE
+                            System.out.println("______________________________________________________");
                         } else {
                             System.out.println("TU SALDO ES INSUFICIENTE");
                         }
@@ -90,47 +93,49 @@ public class Juego_Ruleta {
                         //LEE LA OPCION QUE EL USUARIO INGRESA
                         acertarColor = teclado.nextInt();
 
-                        //NUMERO ALEATORIO 1 Y 2 NO CERO 0
-                        random = (int) (Math.random() * 2 + 1);
+                        while (acertarColor >= 1 && acertarColor <= 2) {
 
-                        //LE QUITA 10 AL SALDO INICIAL, ESO VALE CADA APUESTA
-                        saldo -= 10;
-                        //VALIA SI EL COLOR QUE EL USUARIO INGRESA ES EL QUE SE GENERA
+                            //NUMERO ALEATORIO 1 Y 2 NO CERO 0
+                            random = (int) (Math.random() * 2 + 1);
 
-                        if (acertarColor == random) {
+                            //LE QUITA 10 AL SALDO INICIAL, ESO VALE CADA APUESTA
+                            saldo -= 10;
+                            //VALIA SI EL COLOR QUE EL USUARIO INGRESA ES EL QUE SE GENERA
 
-                            //SI ACIERTA GANA EL DOBLE DE LO QUE APUESTA                    
-                            ganan = apuesta * 2;
+                            if (acertarColor == random) {
 
-                            //CALCULA EL SALDO ACUTAL, LOQ UE GANA MAS LO QUE TENIA
-                            saldo += ganan;
+                                //SI ACIERTA GANA EL DOBLE DE LO QUE APUESTA                    
+                                ganan = apuesta * 2;
 
-                            //MUESTRA EL NUMERO DEL COLOR ALEATORIO
-                            System.out.println("EL COLOR ES:" + random);
+                                //CALCULA EL SALDO ACUTAL, LOQ UE GANA MAS LO QUE TENIA
+                                saldo += ganan;
 
-                            //MUESTRA EL SALDO QUE SUMA AL GANAR
-                            System.out.println("FELICIDADES, ACERTASTE EL COLOR");
-                            System.out.println("TU SALDO ACTUAL ES: " + saldo);
+                                //MUESTRA EL NUMERO DEL COLOR ALEATORIO
+                                System.out.println("EL COLOR ES:" + random);
 
-                        } else {
-                            //MUESTRA EL NUMERO DEL COLOR ALEATORIO
-                            System.out.println("EL COLOR ES:" + random);
-                            System.out.println("HAS PERDIDO");
+                                //MUESTRA EL SALDO QUE SUMA AL GANAR
+                                System.out.println("FELICIDADES, ACERTASTE EL COLOR");
+                                System.out.println("TU SALDO ACTUAL ES: " + saldo);
 
-                            //MUESTRA EL SALDO QUE LE QUEDA AL PERDER
-                            System.out.println("TU SALDO ES:" + saldo);
+                            } else {
+                                //MUESTRA EL NUMERO DEL COLOR ALEATORIO
+                                System.out.println("EL COLOR ES:" + random);
+                                System.out.println("HAS PERDIDO");
+
+                                //MUESTRA EL SALDO QUE LE QUEDA AL PERDER
+                                System.out.println("TU SALDO ES:" + saldo);
+                            }
+                            break;
+
+                            //SI ES CUALQUIER OPCION QUE NO SEA 1, 2 O 3. CIERRA
                         }
-                        break;
-                    default:
-
-                        System.out.println("ERROR, LAPCION NO EXISTE");
-                        break;
-                    //SI ES CUALQUIER OPCION QUE NO SEA 1, 2 O 3. CIERRA
+                        System.out.println("LA OPCION NO ESTA EN EL RANGO");//FIN DEL WHILE
                 }
                 //SI LA OPCION ES DISTINTA O IGUAL A 3 CIERRA
-            } while (opcion != 3);
+            } while (opcion == 1 || opcion == 2);
             {
-                System.out.println("  SALIO DEL JUEGO ");
+                System.out.println("\nLA OPCION " + opcion + " NO EXISTE");
+                System.out.println("SALISTE DEL JUEGO \n");
             }
             //SI YANO TIENE SALDO YA NO PUEDE SEGUIR APOSTANDO
         } else {
