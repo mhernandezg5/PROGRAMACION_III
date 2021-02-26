@@ -11,7 +11,7 @@ public class Juego_Ruleta {
         //PARA LEER DEL TECLADO
         Scanner teclado = new Scanner(System.in);
 
-        //VARIABLES
+        //VARIABLES.
         int opcion, saldo = 100, apuesta = 10, ganan, random;
         int acertarNumero, acertarColor;
 
@@ -26,8 +26,8 @@ public class Juego_Ruleta {
                 //MENÚ PARA QUE EL USUARIO ELIJA 
                 System.out.println("\n1. ACERTAR NUMERO");
                 System.out.println("2. ACERTAR COLOR");
-                System.out.println("3. SALIR");
-                System.out.print("\nELIJE UNA OPCION:");
+
+                System.out.print("\nELIJE UNA OPCION: ");
                 //LEE LA OPCION QUE EL USUARIO INGRESA
                 opcion = teclado.nextInt();
 
@@ -126,7 +126,6 @@ public class Juego_Ruleta {
                                 System.out.println("TU SALDO ES:" + saldo);
                             }
                             break;
-
                             //SI ES CUALQUIER OPCION QUE NO SEA 1, 2 O 3. CIERRA
                         }
                         System.out.println("LA OPCION NO ESTA EN EL RANGO");//FIN DEL WHILE
@@ -134,8 +133,8 @@ public class Juego_Ruleta {
                 //SI LA OPCION ES DISTINTA O IGUAL A 3 CIERRA
             } while (opcion == 1 || opcion == 2);
             {
-                System.out.println("\nLA OPCION " + opcion + " NO EXISTE");
-                System.out.println("SALISTE DEL JUEGO \n");
+                System.out.println("\nLA OPCION " + opcion + " NO EXISTE\n");
+                System.out.println("*****   SALISTE DEL JUEGO  ***** \n");
             }
             //SI YANO TIENE SALDO YA NO PUEDE SEGUIR APOSTANDO
         } else {
