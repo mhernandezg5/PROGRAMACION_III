@@ -4,8 +4,14 @@ package juego_ruleta;
 import java.util.Scanner;
 
 public class Juego_Ruleta {
-
-    // EL METODO PRINCIPAL
+    /**
+ *
+ * @author mhernandezg5@miumg.edu.gt
+ * Mynor Augusto Hernández González
+ * 0900-10-6904
+ * PROGRAMACIÓN III
+ */
+    // EL METODO PRINCIPAL  
     public static void main(String[] args) {
 
         //PARA LEER DEL TECLADO
@@ -80,7 +86,6 @@ public class Juego_Ruleta {
                             System.out.println("TU SALDO ES INSUFICIENTE");
                         }
                         break;
-
                     case 2:
 
                         // MENU DEL CASO 2
